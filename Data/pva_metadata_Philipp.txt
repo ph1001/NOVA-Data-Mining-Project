@@ -255,6 +255,9 @@ DATASRCE                    Source of Overlay Data
                             2 = Polk
                             3 = Both
 
+# David Silva in forum entry "Overlay data variables":
+"Therefore we believe this third-party data was matched with the donor's data and these variables are estimates regarding the household or neighborhood of each donor."
+
 MALEMILI                    % Males active in the Military
 MALEVET                     % Males Veterans
 VIETVETS                    % Vietnam Vets
@@ -343,7 +346,7 @@ PEPSTRFL                    Indicates PEP Star RFA Status
 --------------------------  -------------------------------------------------
 
                             The following variables reflect characteristics
-                            of the donors neighborhood, as collected from the
+                            of the donors neighbourhood, as collected from the
                             2010 US Census.
 
 POP901                      Number of Persons
@@ -405,8 +408,11 @@ MARR1                       Percent Married
 MARR2                       Percent Separated or Divorced
 MARR3                       Percent Widowed
 MARR4                       Percent Never Married
+
 HHP1                        Median Person Per Household
 HHP2                        Average Person Per Household
+     # What does this mean?
+
 DW1                         Percent Single Unit Structure
 DW2                         Percent Detached Single Unit Structure
 DW3                         Percent Duplex Structure
@@ -449,7 +455,10 @@ HVP3                        Percent Home Value >= $100,000
 HVP4                        Percent Home Value >= $75,000
 HVP5                        Percent Home Value >= $50,000
 HVP6                        Percent Home Value >= $300,000
+
 HUR1                        $ 1 or 2 Room Housing Units
+   # Should it say Percent, not $?
+
 HUR2                        Percent >= 6 Room Housing Units
 RHP1                        Median Number of Rooms per Housing Unit
 RHP2                        Average Number of Rooms per Housing Unit
