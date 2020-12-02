@@ -11,7 +11,7 @@ import pandas as pd
 import os
 
 #%% Load data
-data = pd.read_csv(os.path.join('Project-20201106', 'donors.csv'), sep=',', index_col=0)
+data = pd.read_csv(os.path.join('Data', 'donors.csv'), sep=',', index_col=0)
 
 #%% Testing debugging
 for i in range(10):
