@@ -1,0 +1,206 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fswiss\fcharset0 Helvetica-Bold;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww13600\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs32 \cf0 Notes Q&A 10. Dec. 2020
+\fs24 \
+\
+
+\f1\b My question:\
+
+\f0\b0 There are many categorical variables in the dataset. What would you suggest we do with them?\
+\
+- Answer:\
+\
+	- We only use the metric features for clustering.\
+		- Metric features are intervalar and ordinal variables.\
+	- After we have the clustering, we can then use the categorical features for interpreting our clusters.\
+	- For interpretation purposes, we should one-hot encode them.\
+\
+- Using categorical features for clustering could be part of the self exploration part. There are some techniques such as:\
+K prototypes approach\
+\
+The clustering can be done bottom up or top down.\
+\
+=======\
+\
+
+\f1\b Look up:\
+
+\f0\b0 \'93Local outlier factor\'94\
+\
+=======\
+\
+
+\f1\b Link posted by Joao:\
+
+\f0\b0 https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.LocalOutlierFactor.html\
+\
+=======\
+\
+
+\f1\b More robust detection of outliers:
+\f0\b0 \
+- Use multiple outlier detection techniques which all yield a table that define which points are outliers and which ones aren\'92t.\
+- Use the \'93Schnitt\'94 or average or something like that to get a robust estimate on which points are outliers.\
+\
+=======\
+\
+
+\f1\b Pandas profiling:\
+
+\f0\b0 It is an open source software, so be critical of its result.\
+\
+=======\
+\
+
+\f1\b R-squared:
+\f0\b0 \
+- The R-squared metric is only valid if we compare clusterings on the same dataset and for the same number of clusters.\
+- It\'92s only good for comparing different clustering solutions, not to see if a clustering is a good clustering by itself.\
+\
+- Another metric: The difference in means\
+\
+=======\
+\
+
+\f1\b IQR Method:\
+
+\f0\b0 The choice of the multiplier is arbitrary. Can be any number.\
+\
+=======\
+\
+
+\f1\b Possible approach:\
+
+\f0\b0 - First: use hierachachical clustering to assess the number of clusters\
+- Then: Use for example k-means\
+\
+=======\
+\
+
+\f1\b The report:\
+
+\f0\b0 \
+- Content (not sure if I got everything):\
+	- Exploratory analys\
+	- Why did we do the preprocessing that we did\
+	- How did we do our clustering\
+	- What are our final solutions\
+	- Which marketing strategy for which cluster?\
+\
+- The report can be done in Word. Or in Latex or anything we want. It\'92s our choice.\
+\
+- Don\'92t explain all the features that we dropped one-by-one. Just say which variables were dropped with method 1 (and why), which ones were dropped with method 2 (and why), etc.\
+\
+- Explain which variables were kept and why.\
+\
+=======\
+\
+
+\f1\b Joao: \'93A very relevant question that was asked by some students\'94:\
+
+\f0\b0 K-neared-neighbour imputer. To use all the features or just some?\
+\
+Answer:\
+Try to avoid using too many features. Many features means sparse space. \
+Solution: Take a set of features that are a well representing for this purpose.\
+\
+======\
+\
+
+\f1\b KNN Imputer:\
+
+\f0\b0 - We can subjectively choose the features that we use for KNN Imputing\
+- A good choice are features that are highly correlated with the feature that we want to fill.\
+\
+=======\
+\
+
+\f1\b Reference date:\
+
+\f0\b0 Use the date of promotion number 2 of each customer as the reference date.\
+\
+======\
+\
+
+\f1\b How many metric features do we use for our final clustering?\
+
+\f0\b0 - Not less than five. But other than that, it\'92s our choice, as long as we explain it well. Probably more than 15 doesn\'92t make much sense, so 15 is probably the maximum (Joao said).\
+- In the interpretation part, we can use as many categorical 
+\f1\b and also metric features (!)
+\f0\b0  as we want.\
+\
+======\
+\
+
+\f1\b Columns that have over 40% missing values:\
+
+\f0\b0 - Unless they are columns that are extremely important, drop them.\
+- With this many missing values (over 40%), a very solid imputing method would be needed. Something more powerful than just KNN. Like a proper supervised learning approach (Whatever this means).\
+- Diogo said: Date of birth has 75% missing values. Joao: Just drop it. Nothing we can do about it.\
+\
+======\
+\
+
+\f1\b Knowledge about the algorithms:\
+
+\f0\b0 We might be asked how the algorithms work that we used (conceptually). Especially if we use algorithms that weren\'92t covered in the classes.\
+\
+======\
+\
+
+\f1\b Generally: \
+
+\f0\b0 Make sure to standardise the data\
+\
+======\
+\
+
+\f1\b Joao:\
+
+\f0\b0 \'93If a feature is not correlated with any of the other features, it is probably not that important.\'94
+\f1\b \
+\
+
+\f0\b0 ======\
+\
+Correlation higher than 90%:\
+
+\f1\b Maybe
+\f0\b0  drop one. Use critical thinking! Maybe they don\'92t say the same thing and should both be kept!\
+\
+
+\f1\b \
+
+\f0\b0 ======\
+\
+What to do when an observation hasn\'92t sent a gift yet?\
+We could impute it as zero.\
+But be careful: By imputing zero, we make it similar to someone with a value close to zero. But in fact it isn\'92t such a similar situation.\
+\
+======\
+\
+
+\f1\b If we use an algorithm that is not so well known:
+\f0\b0 \
+Write some information about how it works and put it in the appendix.\
+\
+======\
+\
+
+\f1\b is it okay if there are some features that we end up not using at all in the whole project?\
+
+\f0\b0 Yes.\
+\
+======\
+\
+
+\f1\b Domain knowledge:\
+
+\f0\b0 Research and knowledge on the domain (that has implications on what we did) will also be valued in the report.\
+\
+}
