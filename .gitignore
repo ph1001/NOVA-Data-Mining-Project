@@ -128,4 +128,9 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+# Don't upload the dataset since it's very large
 donors.csv
+
+# Ignore .DS_Store
+.DS_Store
+
