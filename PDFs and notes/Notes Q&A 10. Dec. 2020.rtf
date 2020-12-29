@@ -10,8 +10,9 @@
 \
 
 \f1\b My question:\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\f0\b0 There are many categorical variables in the dataset. What would you suggest we do with them?\
+\f0\b0 \cf0 There are many categorical variables in the dataset. What would you suggest we do with them?\
 \
 - Answer:\
 \
@@ -27,22 +28,27 @@ The clustering can be done bottom up or top down.\
 \
 =======\
 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\f1\b Look up:\
+\f1\b \cf0 Look up:\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\f0\b0 \'93Local outlier factor\'94\
+\f0\b0 \cf0 \'93Local outlier factor\'94\
 \
 =======\
 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\f1\b Link posted by Joao:\
+\f1\b \cf0 Link posted by Joao:\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\f0\b0 https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.LocalOutlierFactor.html\
+\f0\b0 \cf0 https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.LocalOutlierFactor.html\
 \
 =======\
 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\f1\b More robust detection of outliers:
+\f1\b \cf0 More robust detection of outliers:
 \f0\b0 \
 - Use multiple outlier detection techniques which all yield a table that define which points are outliers and which ones aren\'92t.\
 - Use the intersection or average or something like that to get a robust estimate on which points are outliers.\
@@ -51,13 +57,15 @@ The clustering can be done bottom up or top down.\
 \
 
 \f1\b Pandas profiling:\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\f0\b0 It is an open source software, so be critical of its result.\
+\f0\b0 \cf0 It is an open source software, so be critical of its result.\
 \
 =======\
 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\f1\b R-squared:
+\f1\b \cf0 R-squared:
 \f0\b0 \
 - The R-squared metric is only valid if we compare clusterings on the same dataset and for the same number of clusters.\
 - It\'92s only good for comparing different clustering solutions, not to see if a clustering is a good clustering by itself.\
@@ -68,23 +76,28 @@ The clustering can be done bottom up or top down.\
 \
 
 \f1\b IQR Method:\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\f0\b0 The choice of the multiplier is arbitrary. Can be any number.\
+\f0\b0 \cf0 The choice of the multiplier is arbitrary. Can be any number.\
 \
 =======\
 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\f1\b Possible approach:\
+\f1\b \cf0 Possible approach:\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\f0\b0 - First: use hierachachical clustering to assess the number of clusters\
+\f0\b0 \cf0 - First: use hierachachical clustering to assess the number of clusters\
 - Then: Use for example k-means\
 \
 =======\
 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\f1\b The report:\
+\f1\b \cf0 The report:\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\f0\b0 \
+\f0\b0 \cf0 \
 - Content (not sure if I got everything):\
 	- Exploratory analys\
 	- Why did we do the preprocessing that we did\
@@ -100,10 +113,12 @@ The clustering can be done bottom up or top down.\
 \
 =======\
 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\f1\b Joao: \'93A very relevant question that was asked by some students\'94:\
+\f1\b \cf0 Joao: \'93A very relevant question that was asked by some students\'94:\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\f0\b0 K-neared-neighbour imputer. To use all the features or just some?\
+\f0\b0 \cf0 K-neared-neighbour imputer. To use all the features or just some?\
 \
 Answer:\
 Try to avoid using too many features. Many features means sparse space. \
@@ -111,71 +126,87 @@ Solution: Take a set of features that are a well representing for this purpose.\
 \
 ======\
 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\f1\b KNN Imputer:\
+\f1\b \cf0 KNN Imputer:\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\f0\b0 - We can subjectively choose the features that we use for KNN Imputing\
+\f0\b0 \cf0 - We can subjectively choose the features that we use for KNN Imputing\
 - A good choice are features that are highly correlated with the feature that we want to fill.\
 \
 =======\
 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\f1\b Reference date:\
+\f1\b \cf0 Reference date:\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\f0\b0 Use the date of promotion number 2 of each customer as the reference date.\
+\f0\b0 \cf0 Use the date of promotion number 2 of each customer as the reference date.\
 \
 ======\
 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\f1\b How many metric features do we use for our final clustering?\
+\f1\b \cf0 How many metric features do we use for our final clustering?\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\f0\b0 - Not less than five. But other than that, it\'92s our choice, as long as we explain it well. Probably more than 15 doesn\'92t make much sense, so 15 is probably the maximum (Joao said).\
+\f0\b0 \cf0 - Not less than five. But other than that, it\'92s our choice, as long as we explain it well. Probably more than 15 doesn\'92t make much sense, so 15 is probably the maximum (Joao said).\
 - In the interpretation part, we can use as many categorical 
 \f1\b and also metric features (!)
 \f0\b0  as we want.\
 \
 ======\
 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\f1\b Columns that have over 40% missing values:\
+\f1\b \cf0 Columns that have over 40% missing values:\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\f0\b0 - Unless they are columns that are extremely important, drop them.\
+\f0\b0 \cf0 - Unless they are columns that are extremely important, drop them.\
 - With this many missing values (over 40%), a very solid imputing method would be needed. Something more powerful than just KNN. Like a proper supervised learning approach (Whatever this means).\
 \
 ======\
 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\f1\b Knowledge about the algorithms:\
+\f1\b \cf0 Knowledge about the algorithms:\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\f0\b0 We might be asked how the algorithms work that we used (conceptually). Especially if we use algorithms that weren\'92t covered in the classes.\
+\f0\b0 \cf0 We might be asked how the algorithms work that we used (conceptually). Especially if we use algorithms that weren\'92t covered in the classes.\
 \
 ======\
 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\f1\b Generally: \
+\f1\b \cf0 Generally: \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\f0\b0 Make sure to standardise the data\
+\f0\b0 \cf0 Make sure to standardise the data\
 \
 ======\
 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\f1\b Joao:\
+\f1\b \cf0 Joao:\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\f0\b0 \'93If a feature is not correlated with any of the other features, it is probably not that important.\'94
+\f0\b0 \cf0 \'93If a feature is not correlated with any of the other features, it is probably not that important.\'94
 \f1\b \
 \
 
 \f0\b0 ======\
 \
 Correlation higher than 90%:\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\f1\b Maybe
+\f1\b \cf0 Maybe
 \f0\b0  drop one. Use critical thinking! Maybe they don\'92t say the same thing and should both be kept!\
 \
 
 \f1\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\f0\b0 ======\
+\f0\b0 \cf0 ======\
 \
 What to do when an observation hasn\'92t sent a gift yet?\
 We could impute it as zero.\
@@ -183,8 +214,9 @@ But be careful: By imputing zero, we make it similar to someone with a value clo
 \
 ======\
 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\f1\b If we use an algorithm that is not so well known:
+\f1\b \cf0 If we use an algorithm that is not so well known:
 \f0\b0 \
 Write some information about how it works and put it in the appendix.\
 \
@@ -192,14 +224,26 @@ Write some information about how it works and put it in the appendix.\
 \
 
 \f1\b is it okay if there are some features that we end up not using at all in the whole project?\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\f0\b0 Yes.\
+\f0\b0 \cf0 Yes.\
 \
 ======\
 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\f1\b Domain knowledge:\
+\f1\b \cf0 Domain knowledge:\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\f0\b0 Research and knowledge on the domain (that has implications on what we did) will also be valued in the report.\
+\f0\b0 \cf0 Research and knowledge on the domain (that has implications on what we did) will also be valued in the report.\
 \
+\
+======\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f1\b \cf0 PCA:\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b0 \cf0 Run PCA between \'91related\'92 features. (ex: population, wealthiness, region) - this way we reduce dimensionality but keep information\
 }
