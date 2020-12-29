@@ -1,0 +1,183 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2577
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11800\viewh15020\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs28 \cf0 # 'CONTROLN', # ("Control number, unique record identifier") \
+# 100% distinct values. Drop it.\
+    \
+'CONTROLN',\
+    \
+#====================\
+#====================\
+    \
+# 'TCODE', # ("Donors title code") \
+# Doesn\'92t represent relevant information for clustering and >40% are zeros. Drop it.\
+    \
+'TCODE',\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 #====================\
+#====================\
+\
+# \'91MAILCODE\'92, # (\'93Mail Code\'94)\
+# Doesn\'92t represent relevant information for clustering. Drop it\
+\
+\'91MAILCODE\'92,\
+\
+#====================\
+#====================\
+\
+# \'91NOEXCH\'92, # (\'93Do not exchange flag\'94)\
+# Doesn\'92t represent relevant information for clustering. Drop it\
+\
+\'91NOEXCH\'92,\
+\
+#====================\
+#====================\
+\
+# \'91RECINHSE\'92\
+# \'91RECP3\'92\
+# \'91RECPGVG\'92\
+# \'91RECSWEEP\'92\
+# \'91MAJOR\'92\
+\
+# All the above feature have really low variance and are binary. Nearly constant. Drop them.\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\tx10680\tx10680\tx10680\pardirnatural\partightenfactor0
+\cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \'91RECINHSE\'92,\
+\'91RECP3\'92,\
+\'91RECPGVG\'92,\
+\'91RECSWEEP\'92,\
+\'91MAJOR\'92,\
+\
+#====================\
+#====================\
+\
+# \'91POP90C4\'92 (\'93Percent of Male in the neighbourhood\'94)\
+# \'91POP90C5\'92 (\'93Percent of Female in the neighbourhood\'94)\
+\
+# This 2 must be highly negatively correlated since one implies the opposite on the other. Only need to keep 1. Let\'92s keep \'91POP90C5\'92 for example.\
+\
+\'91POP90C4\'92 ,\
+\
+#====================\
+#====================\
+\
+# \'91ETH2\'92\
+# \'91ETHC4\'92\
+# \'91ETHC5\'92\
+\
+# Both \'91ETHC4 and \'91ETCH15\'92 are highly correlated with \'91ETH2\'92.\
+\
+# Keep \'91ETH2\'92 and drop the other 2\
+\
+\'91ETHC4\'92,\
+\'91ETHC5\'92,\
+\
+#====================\
+#====================\
+\
+# \'91ETH5\'92\
+# \'91ETH13\'92\
+# \'91LSC2\'92\
+\
+# Both \'91ETH13 and \'91LSC2\'92 are highly correlated with \'91ETH5\'92.\
+\
+# Keep \'91ETH5\'92 and drop the other 2\
+\
+\'91ETH13\'92,\
+\'91LSC2\'92,\
+\
+#====================\
+#====================\
+\
+# \'91ETH11\'92\
+# \'91ETH12\'92\
+# \'91ETH15\'92\
+\
+# All have zeros in near 90% entries. Approximately constant. Drop them.\
+\
+\'91ETH11\'92,\
+\'91ETH12\'92,\
+\'91ETH15\'92,\
+\
+#====================\
+#====================\
+\
+# \'91HV1\'92, # (\'93Median Home Value in hundreds\'94)\
+# \'91HV2\'92, # (\'93Average Home Value in hundreds\'94)\
+# \'91HV3\'92, # (\'93Median Contract Rent Value in hundreds\'94)\
+# \'91HV4\'92, # (\'93Average Contract Rent Value in hundreds\'94)\
+# \'91HVP6\'92, # (\'93Percent Home Value >= $ 300,000\'94)\
+# \'91HVP2\'92, # (\'93Percent Home Value >= $ 150,000\'94)\
+# \'91RP1\'92, # (\'93Percent Renters Paying >= $500 per Month\'94)\
+\
+# \'91HV1\'92, \'91HV2\'92, - highly correlated \
+# \'91HV1\'92, \'92HVP6\'92 - highly correlated\
+# \'91HV2\'92, \'91HVP2\'92 - highly correlated\
+# \'91HV3\'92, \'91HV4\'92 - highly correlated\
+# \'91HV4\'92, \'91RP1\'92 - highly correlated\
+\
+# We keep \'91HV1\'92 and \'91HV4\'92 which hold most information. Drop the others.\
+\
+\'91HV2\'92,\
+\'91HV3\'92,\
+\'91HVP6\'92,\
+\'91HVP2\'92,\
+\'91RP1\'92, \
+\
+#====================\
+#====================\
+\
+# \'91HU1\'92, # (\'93Percent Owner Occupied Units\'94)\
+# \'91HU2\'92, # (\'93Percent Renter Occupied Units\'94)\
+\
+# \'91HU1\'92 and \'91HU2\'92 are highly correlated. \
+\
+# Keep \'91HU1\'92 that hold higher variance.\
+\
+\'91HU2\'92,\
+\
+#====================\
+#====================\
+\
+# \'91HHD1\'92, # (\'93Percent Households w/ Related Children\'94)\
+# \'91HHD2\'92, # (\'93Percent Households w/ Families\'94)\
+# \'91HHD3\'92, # (\'93Percent Married Couple Families\'94)\
+# \'91HHD4\'92, # (\'93Percent Married Couple w/ Related Children\'94)\
+# \'91HHD5\'92, # (\'93Percent Persons in Family Household\'94)\
+# \'91HHD7\'92, # (\'93Percent Single Parent Household\'94)\
+# \'91HHD9\'92, # (\'93Percent Female Householder w/ Children\'94)\
+# \'91HHD11\'92, # (\'93Percent Single Female Householder\'94)\
+# \'91HNN11\'92, # \
+# \'91AGE907\'92, # (\'93Percent Population Under Age 18\'94)\
+# \'91MARR1\'92, # (\'93Percent Married\'94)\
+# \'91HHN3\'92, # (\'93Percent Married\'94)\
+\
+# \'91HHD1\'92 and \'91AGE907\'92 are highly correlated\
+# \'91HHD3\'92 and \'91MARR1\'92 are highly correlated\
+# \'91HHD3\'92 and \'91HHD2\'92 are highly correlated\
+# \'91HHD5\'92 and \'91HHD2\'92 are highly correlated\
+# \'91HHD4\'92 and \'91HHN3\'92 are highly correlated\
+# \'91HHD9\'92 and \'91HHD7\'92 are highly correlated\
+# \'91HHD1\'92 and \'91HNN11\'92 are highly correlated\
+\
+Drop \'91MARR1\'92,  \'91HHD5\'92, \'91AGE907\'92, \'91HHD9\'92, \'91HNN11\'92, \'91HHN3\'92\
+\
+\'91HHD5\'92\
+\'91HHD9\'92\
+\'91HNN11\'92\
+\'91AGE907\'92\
+\'91MARR1\'92\
+\'91HHN3\'92\
+\
+\
+\
+\
+\
+\
+}
