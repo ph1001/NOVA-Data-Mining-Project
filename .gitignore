@@ -130,6 +130,7 @@ dmypy.json
 
 # Don't upload the dataset since it's very large
 donors.csv
+donors_after_scaling.csv
 
 # Ignore .DS_Store
 .DS_Store
