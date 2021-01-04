@@ -1,0 +1,65 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2577
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica-Bold;\f1\fswiss\fcharset0 Helvetica;\f2\froman\fcharset0 Times-Roman;
+}
+{\colortbl;\red255\green255\blue255;\red33\green255\blue255;\red0\green0\blue0;\red0\green0\blue0;
+}
+{\*\expandedcolortbl;;\cssrgb\c0\c99144\c100000;\csgray\c0\c0;\cssrgb\c0\c0\c0;
+}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+\paperw11900\paperh16840\margl1440\margr1440\vieww26320\viewh14800\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b\fs26 \cf0 Methodology\
+
+\f1\b0 \
+For the clustering, two approaches were followed:\
+\
+1. <<<Henrique\'92s approach>>>\
+\
+2. K-means clustering on different feature sets, representing different perspectives on the data with subsequent combination of those perspectives and hierarchical clustering on the found centroids in order to determine the perspective combination that leads to the highest R2 score.\
+\
+In the following, the second approach will be described in detail:\
+\
+First, the feature sets representing the different \cb2 perspectives on the data\cb3  were assessed again, drastically reducing their number and their number of features per perspective. For this, the component planes from approach 1 were used to identify the most promising features from the features used in approach 1. The component planes for the perspective \'91donor_info\'92 are presented in figure xx. From these four features, three were selected to be used in this approach: \'91ODATEDW_rel_in_days\'92, \'91INCOME\'92 and \'91NUMPROM\'92.\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f2 \cf4 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 {{\NeXTGraphic unknown.png \width18570 \height13420 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\pardeftab720\partightenfactor0
+
+\f1 \cf0 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+Then, on each of these reduced feature sets, k-means clustering was done iteratively with values of k ranging from 2 to to 9, each time saving the R2 score of the resulting clustering solution. Like this, the optimal value for k was identified for each perspective. Figure xx shows the resulting R2 scores for each perspective and for varying values for k.\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f2 \cf4 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 {{\NeXTGraphic 1__#$!@%!#__unknown.png \width12260 \height9910 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}
+\f1 \cf0 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+Then, with the optimal value for k for each perspective, k-means was run again once more on each perspective, yielding cluster labels for each perspective. In the next step, pairwise combinations of all perspectives were created and the centroids for each of the the resulting cluster label pairs were computed. Each of the resulting arrays of centroids were then the basis for hierarchical clustering, with the purpose of assessing which of the cluster pair combinations could be combined into merged, larger clusters. For this \'91AgglommerativeClustering\'92 was used on each result of each pair of perspectives and then a dendrogram for each fitted instance was created, in order to visually assess, which number of cluster is appropriate. These values were manually saved in a list and used for another hierachical clustering step, in which it was determined, which pair of perspectives yields the best R2 score. After determining this, hierarchical clustering was re-run with this pair of perspectives and and the optimal number of clusters obtained from the visual inspection of the dendrograms described before. A mapper was used to apply the result to the whole dataset.\
+\
+\
+
+\f0\b Results\
+
+\f1\b0 \
+The result of the feature perspectives selection process, conducted by assessement of the component planes from approach 1 resulted in seven perspectives that are as follows:\
+\pard\tx220\tx720\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\li720\fi-720\pardirnatural\partightenfactor0
+\ls1\ilvl0\cf0 {\listtext	\uc0\u8226 	}donor_info_features_2: 'ODATEDW_rel_in_days', 'INCOME', 'NUMPROM',\
+{\listtext	\uc0\u8226 	}gifts_given_features_2: \'92RAMNTALL', 'NGIFTALL',\
+{\listtext	\uc0\u8226 	}population_features_2: 'POP90C1', 'POP90C2', 'POP90C3'\
+{\listtext	\uc0\u8226 	}provenance_features_2: \'91ETH2', 'ETH5',\
+{\listtext	\uc0\u8226 	}housing_price_features_2: 'HVP3', 'HVP5', 'RP3\'92,\
+{\listtext	\uc0\u8226 	}housing_quantity_features_2: \'91HU4', 'HU5\'92,\
+{\listtext	\uc0\u8226 	}income_features_2:\'92 HHD4', 'IC6'.\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+\
+\
+}
